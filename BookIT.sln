@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookIT", "BookIT\BookIT.csproj", "{65FE13B7-1A2E-4AB6-8EE6-BA36793DE00E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookIT", "BookIT\BookIT.csproj", "{65FE13B7-1A2E-4AB6-8EE6-BA36793DE00E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookIT.Core", "BookIT.Core\BookIT.Core.csproj", "{D2D5DCD6-1114-41DE-8E02-8EFA6D30014B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookIT.Infrastructure", "BookIT.Infrastructure\BookIT.Infrastructure.csproj", "{421A8CD2-1A28-4D3A-AE65-2DD8462A5AB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{65FE13B7-1A2E-4AB6-8EE6-BA36793DE00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65FE13B7-1A2E-4AB6-8EE6-BA36793DE00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65FE13B7-1A2E-4AB6-8EE6-BA36793DE00E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D5DCD6-1114-41DE-8E02-8EFA6D30014B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D5DCD6-1114-41DE-8E02-8EFA6D30014B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D5DCD6-1114-41DE-8E02-8EFA6D30014B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D5DCD6-1114-41DE-8E02-8EFA6D30014B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421A8CD2-1A28-4D3A-AE65-2DD8462A5AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421A8CD2-1A28-4D3A-AE65-2DD8462A5AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421A8CD2-1A28-4D3A-AE65-2DD8462A5AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421A8CD2-1A28-4D3A-AE65-2DD8462A5AB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
