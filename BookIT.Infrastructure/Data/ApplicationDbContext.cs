@@ -65,7 +65,7 @@ namespace BookIT.Infrastructure.Data
 
         public DbSet<Room> Rooms { get; set; } = null!;
 
-        public DbSet<Host> Hosts { get; set; } = null!;
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
 
         public DbSet<Company> Companies { get; set; } = null!;
     }
