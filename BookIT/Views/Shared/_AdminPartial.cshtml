@@ -1,0 +1,17 @@
+﻿@using BookIT.Infrastructure.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1" >
+        @if(!SignInManager.IsSignedIn(User)){
+            <li class="nav-item">
+                <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Home" asp-action="Index">Admin Panel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Home" asp-action="Index">Partner Panel</a>
+            </li>
+        }        
+    </ul>
+</div>

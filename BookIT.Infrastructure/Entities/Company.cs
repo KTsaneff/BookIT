@@ -32,6 +32,6 @@ namespace BookIT.Infrastructure.Entities
         public string HostId { get; set; } = null!;
 
         [ForeignKey(nameof(HostId))]
-        public Host Host { get; set; } = null!;
+        public ApplicationUser Host { get; set; } = null!;
     }
 }

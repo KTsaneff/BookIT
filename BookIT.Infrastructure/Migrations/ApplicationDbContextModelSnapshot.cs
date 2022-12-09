@@ -506,7 +506,7 @@ namespace BookIT.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BookIT.Infrastructure.Entities.Host", b =>
+            modelBuilder.Entity("BookIT.Infrastructure.Entities.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -520,7 +520,7 @@ namespace BookIT.Infrastructure.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
-                    b.HasDiscriminator().HasValue("Host");
+                    b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Booking", b =>
@@ -544,7 +544,7 @@ namespace BookIT.Infrastructure.Migrations
 
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Company", b =>
                 {
-                    b.HasOne("BookIT.Infrastructure.Entities.Host", "Host")
+                    b.HasOne("BookIT.Infrastructure.Entities.ApplicationUser", "Host")
                         .WithMany()
                         .HasForeignKey("HostId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -567,7 +567,7 @@ namespace BookIT.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BookIT.Infrastructure.Entities.Host", "Host")
+                    b.HasOne("BookIT.Infrastructure.Entities.ApplicationUser", "Host")
                         .WithMany()
                         .HasForeignKey("HostId")
                         .OnDelete(DeleteBehavior.Cascade)

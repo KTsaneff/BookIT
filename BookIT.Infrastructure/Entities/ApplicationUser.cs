@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookIT.Infrastructure.Entities
 {
-    public class Host : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [Required]
         [StringLength(30)]

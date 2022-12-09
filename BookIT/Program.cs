@@ -1,4 +1,5 @@
 using BookIT.Infrastructure.Data;
+using BookIT.Infrastructure.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,14 +10,24 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {
-    options.SignIn.RequireConfirmedAccount = true;
+    options.SignIn.RequireConfirmedAccount = builder
+    .Configuration.GetValue<bool>("Identity:RequireConfirmedAccount");
+    options.SignIn.RequireConfirmedEmail = builder
+    .Configuration.GetValue<bool>("Identity:RequireConfirmedEmail");
+    options.SignIn.RequireConfirmedPhoneNumber = builder
+    .Configuration.GetValue<bool>("Identity:RequireConfirmedPhoneNumber");
 
-    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireNonAlphanumeric = builder
+    .Configuration.GetValue<bool>("Identity:RequireNonAlphanumeric");
+    options.Password.RequiredLength = builder
+    .Configuration.GetValue<int>("Identity:RequiredLength");
+
+    options.User.RequireUniqueEmail = builder
+    .Configuration.GetValue<bool>("Identity:RequireUniqueEmail");
+
     options.Password.RequiredLength = 6;
-
-    options.User.RequireUniqueEmail = true;
 })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 

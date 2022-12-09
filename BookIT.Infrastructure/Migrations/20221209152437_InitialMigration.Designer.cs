@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookIT.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221208131636_InitialMigration")]
+    [Migration("20221209152437_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -508,7 +508,7 @@ namespace BookIT.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BookIT.Infrastructure.Entities.Host", b =>
+            modelBuilder.Entity("BookIT.Infrastructure.Entities.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -522,7 +522,7 @@ namespace BookIT.Infrastructure.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
-                    b.HasDiscriminator().HasValue("Host");
+                    b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Booking", b =>
@@ -546,7 +546,7 @@ namespace BookIT.Infrastructure.Migrations
 
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Company", b =>
                 {
-                    b.HasOne("BookIT.Infrastructure.Entities.Host", "Host")
+                    b.HasOne("BookIT.Infrastructure.Entities.ApplicationUser", "Host")
                         .WithMany()
                         .HasForeignKey("HostId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -569,7 +569,7 @@ namespace BookIT.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BookIT.Infrastructure.Entities.Host", "Host")
+                    b.HasOne("BookIT.Infrastructure.Entities.ApplicationUser", "Host")
                         .WithMany()
                         .HasForeignKey("HostId")
                         .OnDelete(DeleteBehavior.Cascade)
