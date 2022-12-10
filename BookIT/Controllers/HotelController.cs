@@ -5,11 +5,11 @@ namespace BookIT.Controllers
 {
     public class HotelController : Controller
     {
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
-            var model = new AllHotelsQueryModel();
+            var model = new HotelViewModel();
 
-                return View(model);
+             return View(model);
         }
     }
 }
