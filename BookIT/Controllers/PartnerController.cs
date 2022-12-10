@@ -1,4 +1,5 @@
-﻿using BookIT.Core.Models.User;
+﻿using BookIT.Core.Models.Partner;
+using BookIT.Core.Models.User;
 using BookIT.Infrastructure.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -6,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookIT.Controllers
 {
-    public class ApplicationUserController : Controller
+    public class PartnerController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
 
-        public ApplicationUserController(
+        public PartnerController(
             UserManager<ApplicationUser> _userManager,
             SignInManager<ApplicationUser> _signInManager)
         {
@@ -27,14 +28,14 @@ namespace BookIT.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var model = new RegisterViewModel();
+            var model = new PartnerRegisterViewModel();
 
             return View(model);
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(PartnerRegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -43,9 +44,9 @@ namespace BookIT.Controllers
 
             var user = new ApplicationUser()
             {
-                UserName = model.FirstName,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
+                UserName = model.VATnumber,
                 PhoneNumber = model.PhoneNumber,
                 Email = model.Email
             };
@@ -73,14 +74,14 @@ namespace BookIT.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var model = new LoginViewModel();
+            var model = new PartnerLoginViewModel();
 
             return View(model);
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(PartnerLoginViewModel model)
         {
             if (!ModelState.IsValid)
             {

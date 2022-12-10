@@ -1,5 +1,5 @@
-﻿@using BookIT.Core.Models.User
-@model LoginViewModel
+﻿@using BookIT.Core.Models.Partner
+@model PartnerLoginViewModel
 
 @{
     ViewData["Title"] = "Log in";
@@ -13,6 +13,11 @@
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="text-center mb-3">
+                    <label asp-for="@Model.VATnumber" class="form-label"></label>
+                    <input asp-for="@Model.VATnumber" class="form-control" autocomplete="vatnumber" aria-required="true" />
+                    <span asp-validation-for="VATnumber" class="text-danger"></span>
+                </div>
+                <div class="text-center mb-3">
                     <label asp-for="@Model.Email" class="form-label"></label>
                     <input asp-for="@Model.Email" class="form-control" autocomplete="email" aria-required="true" />
                     <span asp-validation-for="Email" class="text-danger"></span>
@@ -24,6 +29,9 @@
                 </div>
                 <div class="text-center">
                     <button id="login-submit" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div id="register-link" class="text-right">
+                    <a href="#" class="text-info">Register here</a>
                 </div>
             </form>
         </section>
