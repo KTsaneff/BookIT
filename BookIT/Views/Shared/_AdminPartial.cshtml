@@ -7,10 +7,10 @@
     <ul class="navbar-nav flex-grow-1" >
         @if(!SignInManager.IsSignedIn(User)){
             <li class="nav-item">
-                <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Home" asp-action="Index">Admin Panel</a>
+                <a class="nav-link text-dark text-decoration-underline" asp-controller="Admin" asp-action="Login">Admin Panel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Home" asp-action="Index">Partner Panel</a>
+                <a class="nav-link text-dark text-decoration-underline" asp-controller="Partner" asp-action="Login">Partner Panel</a>
             </li>
         }        
     </ul>

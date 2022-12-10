@@ -16,3 +16,20 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#wrapper {
+    border: 1px solid blue;
+}
+
+#div1 {
+    display: inline-block;
+    width: 170px;
+    height: 30px;
+}
+
+#div2 {
+    vertical-align: top;
+    display: inline-block;
+    width: 180px;
+    height: 30px;
+}
