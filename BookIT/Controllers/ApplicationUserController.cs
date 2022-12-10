@@ -43,6 +43,10 @@ namespace BookIT.Controllers
 
             var user = new ApplicationUser()
             {
+                UserName = model.FirstName,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
                 Email = model.Email
             };
 
