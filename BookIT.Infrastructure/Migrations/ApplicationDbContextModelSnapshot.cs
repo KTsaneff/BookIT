@@ -613,7 +613,7 @@ namespace BookIT.Infrastructure.Migrations
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Room", b =>
                 {
                     b.HasOne("BookIT.Infrastructure.Entities.Hotel", "Hotel")
-                        .WithMany()
+                        .WithMany("Rooms")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -687,6 +687,8 @@ namespace BookIT.Infrastructure.Migrations
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Hotel", b =>
                 {
                     b.Navigation("Bookings");
+
+                    b.Navigation("Rooms");
                 });
 
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Region", b =>

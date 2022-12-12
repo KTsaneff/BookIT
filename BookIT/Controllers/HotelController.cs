@@ -5,7 +5,7 @@ namespace BookIT.Controllers
 {
     public class HotelController : Controller
     {
-        public async Task<IActionResult> All()
+        public async Task<IActionResult>All()
         {
             var model = new HotelViewModel();
 
