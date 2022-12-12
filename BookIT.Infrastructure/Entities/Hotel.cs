@@ -61,5 +61,7 @@ namespace BookIT.Infrastructure.Entities
         public Country Country { get; set; } = null!;
 
         public List<Booking> Bookings { get; set; } = new List<Booking>();
+
+        public List<Room> Rooms { get; set; } = new List<Room>();
     }
 }

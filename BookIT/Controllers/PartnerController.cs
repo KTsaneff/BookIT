@@ -55,7 +55,7 @@ namespace BookIT.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Login", "ApplicationUser");
+                return RedirectToAction("Login", "Partner");
             }
 
             foreach (var e in result.Errors)

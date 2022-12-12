@@ -2,7 +2,7 @@
 @model PartnerLoginViewModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Partner Panel Login";
 }
 
 <h1 class="text-center">@ViewData["Title"]</h1>
@@ -31,7 +31,7 @@
                     <button id="login-submit" type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div id="register-link" class="text-right">
-                    <a href="#" class="text-info">Register here</a>
+                    <a class="nav-link text-dark text-info" asp-controller="Partner" asp-action="Register">Register</a>
                 </div>
             </form>
         </section>
