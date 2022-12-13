@@ -27,11 +27,6 @@ namespace BookIT.Infrastructure.Entities
         [Required]
         [Column(TypeName = "money")]
         [Precision(18, 2)]
-        public decimal PricePerNight { get; set; }
-
-        [Required]
-        [Column(TypeName = "money")]
-        [Precision(18, 2)]
         public decimal TotalPrice { get; set; }
 
         [Required]
