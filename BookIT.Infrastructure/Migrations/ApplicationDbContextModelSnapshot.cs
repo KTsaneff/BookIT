@@ -52,10 +52,6 @@ namespace BookIT.Infrastructure.Migrations
                     b.Property<bool>("IsCancelled")
                         .HasColumnType("bit");
 
-                    b.Property<decimal>("PricePerNight")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("money");
-
                     b.Property<decimal>("TotalPrice")
                         .HasPrecision(18, 2)
                         .HasColumnType("money");
@@ -272,6 +268,9 @@ namespace BookIT.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CountForSale")
+                        .HasColumnType("int");
 
                     b.Property<int?>("ExtraBedsCount")
                         .HasColumnType("int");

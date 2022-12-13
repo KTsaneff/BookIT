@@ -9,6 +9,8 @@ namespace BookIT.Infrastructure.Entities
         [Key]
         public int Id { get; set; }
 
+        public int CountForSale { get; set; } = 0;
+
         [Required]
         [Column(TypeName = "money")]
         [Precision(18,2)]
@@ -28,5 +30,7 @@ namespace BookIT.Infrastructure.Entities
 
         [ForeignKey(nameof(HotelId))]
         public Hotel Hotel { get; set; } = null!;
+
+
     }
 }
