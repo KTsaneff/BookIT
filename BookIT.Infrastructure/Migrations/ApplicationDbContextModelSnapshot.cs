@@ -111,8 +111,8 @@ namespace BookIT.Infrastructure.Migrations
 
                     b.Property<string>("VATnumber")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
 
@@ -208,6 +208,64 @@ namespace BookIT.Infrastructure.Migrations
                     b.ToTable("Hotels");
                 });
 
+            modelBuilder.Entity("BookIT.Infrastructure.Entities.Invoice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AccountablePersonFullName")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("ContractingParty")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsAnulled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("IssueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IssueUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ServiceName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ServicePrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("money");
+
+                    b.Property<int>("VATnumber")
+                        .HasMaxLength(15)
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IssueUserId");
+
+                    b.ToTable("Invoices");
+                });
+
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Message", b =>
                 {
                     b.Property<int>("Id")
@@ -282,6 +340,9 @@ namespace BookIT.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MainBedsCount")
                         .HasColumnType("int");
@@ -585,6 +646,17 @@ namespace BookIT.Infrastructure.Migrations
                     b.Navigation("Host");
 
                     b.Navigation("Region");
+                });
+
+            modelBuilder.Entity("BookIT.Infrastructure.Entities.Invoice", b =>
+                {
+                    b.HasOne("BookIT.Infrastructure.Entities.ApplicationUser", "IssueUser")
+                        .WithMany()
+                        .HasForeignKey("IssueUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IssueUser");
                 });
 
             modelBuilder.Entity("BookIT.Infrastructure.Entities.Message", b =>

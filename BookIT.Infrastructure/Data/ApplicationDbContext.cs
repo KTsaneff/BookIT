@@ -59,6 +59,8 @@ namespace BookIT.Infrastructure.Data
 
         public DbSet<Hotel> Hotels { get; set; } = null!;
 
+        public DbSet<Invoice> Invoices { get; set; } = null!;
+
         public DbSet<Message> Messages { get; set; } = null!;
 
         public DbSet<Region> Regions { get; set; } = null!;
