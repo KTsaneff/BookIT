@@ -25,6 +25,8 @@ namespace BookIT.Infrastructure.Entities
         [StringLength(250)]
         public string ImageUrl { get; set; } = null!;
 
+        public bool IsActive { get; set; }
+
         [Required]
         public int HotelId { get; set; }
 

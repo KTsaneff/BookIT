@@ -21,7 +21,7 @@ namespace BookIT.Infrastructure.Entities
         public string Address { get; set; } = null!;
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(15)]
         public string VATnumber { get; set; } = null!;
 
         [Required]
