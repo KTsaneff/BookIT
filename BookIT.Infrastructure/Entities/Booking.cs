@@ -33,7 +33,7 @@ namespace BookIT.Infrastructure.Entities
         public string GuestId { get; set; } = null!;
 
         [ForeignKey(nameof(GuestId))]
-        public IdentityUser Guest { get; set; } = null!;
+        public ApplicationUser Guest { get; set; } = null!;
 
         [Required]
         public int HotelId { get; set; }

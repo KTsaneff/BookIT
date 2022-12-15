@@ -105,7 +105,7 @@ namespace BookIT.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout(string? returnUrl = null)
         {
             await signInManager.SignOutAsync();
 

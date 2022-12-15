@@ -14,7 +14,33 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Baskerville Old Face';
+    font-style: italic;
+}
+
+.carousel {
+    margin: auto;
+    width: 640px;
+    height: 360px;
+    font-weight: bold;
+}
+
+.nav-right {
+    float: right;
+}
+
+#page-background::before {
+    content: "";
+    background-image: url('/img/ThinkstockPhotos-891573112.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    opacity: 0.18;
 }
 
 #wrapper {
