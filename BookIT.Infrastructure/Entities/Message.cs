@@ -22,6 +22,6 @@ namespace BookIT.Infrastructure.Entities
         public string SenderId { get; set; } = null!;
 
         [ForeignKey(nameof(SenderId))]
-        public IdentityUser Sender { get; set; } = null!;
+        public ApplicationUser Sender { get; set; } = null!;
     }
 }

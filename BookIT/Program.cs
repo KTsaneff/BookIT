@@ -26,8 +26,6 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 
     options.User.RequireUniqueEmail = builder
     .Configuration.GetValue<bool>("Identity:RequireUniqueEmail");
-
-    options.Password.RequiredLength = 6;
 })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 

@@ -32,7 +32,5 @@ namespace BookIT.Infrastructure.Entities
 
         [ForeignKey(nameof(HotelId))]
         public Hotel Hotel { get; set; } = null!;
-
-
     }
 }

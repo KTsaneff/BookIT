@@ -35,7 +35,7 @@ namespace BookIT.Infrastructure.Entities
         [Required]
         [Phone]
         public string PhoneNumber { get; set; } = null!;
-        
+
         [Required]
         public string HostId { get; set; } = null!;
 
