@@ -19,6 +19,14 @@ body {
     font-style: italic;
 }
 
+.showcase {
+    position: absolute;
+}
+
+.bg-image {
+    opacity: 0.15;
+}
+
 .carousel {
     margin: auto;
     width: 640px;
@@ -28,19 +36,6 @@ body {
 
 .nav-right {
     float: right;
-}
-
-#page-background::before {
-    content: "";
-    background-image: url('/img/ThinkstockPhotos-891573112.jpg');
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-
-    opacity: 0.18;
 }
 
 #wrapper {
