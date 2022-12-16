@@ -27,14 +27,14 @@ namespace BookIT.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var model = new RegisterViewModel();
+            var model = new UserRegisterViewModel();
 
             return View(model);
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(UserRegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -73,14 +73,14 @@ namespace BookIT.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var model = new LoginViewModel();
+            var model = new UserLoginViewModel();
 
             return View(model);
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(UserLoginViewModel model)
         {
             if (!ModelState.IsValid)
             {

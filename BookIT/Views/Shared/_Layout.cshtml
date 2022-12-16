@@ -22,13 +22,10 @@
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Bucketlist</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Visited</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Favorites</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Visited</a>
                             </li>
                         }
                             <li class="nav-item dropdown">
